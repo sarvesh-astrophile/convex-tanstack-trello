@@ -1,0 +1,13 @@
+{
+    "name": "text-convex-trello",
+    "private": true,
+    "sideEffects": false,
+    "type": "module",
+    "scripts": {
+        "dev": "bunx convex dev --once && concurrently -r bun:dev:web bun:dev:db",
+        "dev:web": "vite dev",
+        "dev:db": "convex dev --run board:seed",
+        "build": "vite build && tsc --noEmit",
+        "start": "bun start"
+    }
+}
