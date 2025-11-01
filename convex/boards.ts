@@ -126,7 +126,7 @@ async function ensureItemExists(
 export const createColumn = mutation({
 	args: newColumnSchema,
 	handler: async (ctx, { boardId, name }) => {
-		ensureBoardExists(ctx, boardId);
+		await ensureBoardExists(ctx, boardId);
 
 		const existingColumns = await ctx.db
 			.query("columns")
